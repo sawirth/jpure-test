@@ -1,0 +1,14 @@
+import jkit.java.annotations.*;
+import java.util.*;
+
+public class FieldDeref_5 {
+    ArrayList<String> ls;
+
+    @Local FieldDeref_5(ArrayList<String> ls) {
+	this.ls = ls;
+    }
+
+    @Pure public boolean f() {
+	return ls.size() > 0;
+    }
+}

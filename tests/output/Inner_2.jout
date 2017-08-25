@@ -1,0 +1,12 @@
+import jpure.annotations.*;
+public class Inner_2 {
+    @Local private String field;
+
+    public class Inner {
+	@Pure public void g() {	       
+	    if(field != null) {
+		field.toString();
+	    }
+	}
+    }
+}

@@ -1,0 +1,13 @@
+import jpure.annotations.*;
+public class LocalMethod_5 {
+    int x;
+
+    public LocalMethod_5(int x) {
+	this.x = x;
+	System.out.println("GOTCHA");
+    }
+
+    public void f() {
+	new LocalMethod_5(1);
+    }
+}

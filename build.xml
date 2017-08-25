@@ -1,0 +1,22 @@
+<project name="JPure" default="build">
+  <target name="compile">
+    <javac classpath="lib/jkit.jar" debug="true" srcdir="." includes="jpure/**" excludes="jpure/testing/**"/> 
+  </target>
+
+  <target name="build" depends="compile">
+  	<mkdir dir="tmp"/>
+    <manifest file="tmp/MANIFEST.MF">
+      <attribute name="Built-By" value="${user.name}"/>
+      <attribute name="Main-Class" value="jpure.Main"/>
+    </manifest>
+    <jar destfile="lib/jpure.jar" basedir="." includes="jpure/**/*.class,jpure/**/*.java" manifest="tmp/MANIFEST.MF"/>
+  </target>
+
+ <target name="clean">
+  <delete includeEmptyDirs="true" failonerror="false">
+   <fileset file="lib/*.jar"/>
+   <fileset dir="." includes="**/*.class"/>
+   <fileset dir="tmp/" includes="**"/>
+  </delete>
+ </target>
+</project>

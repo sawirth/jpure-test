@@ -1,0 +1,14 @@
+import jpure.annotations.*;
+import java.util.*;
+
+public class FunCall_6 {
+    @Pure public void f(String x) {
+	g(x);
+    }
+
+    @Fresh public List<String> g(String y) {
+	ArrayList<String> x = new ArrayList<String>();
+	x.add(y.toString());
+	return x;	
+    }
+}

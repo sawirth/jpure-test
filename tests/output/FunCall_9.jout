@@ -1,0 +1,12 @@
+import jpure.annotations.*;
+import java.util.*;
+
+public class FunCall_9 {
+    @Pure public void f(String x) {
+	g(x);
+    }
+
+    @Fresh public String g(String y) {
+	return y + "World";
+    }
+}

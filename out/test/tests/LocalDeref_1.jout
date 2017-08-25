@@ -1,0 +1,6 @@
+import jkit.java.annotations.*;
+public class LocalDeref_1 {
+    @Pure public void f(String x) {
+	x.toString();
+    }
+}

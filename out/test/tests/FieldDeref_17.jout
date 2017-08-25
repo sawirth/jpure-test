@@ -1,0 +1,23 @@
+import jkit.java.annotations.*;
+public class FieldDeref_17 {
+    String field = "hello";
+
+    @Local public FieldDeref_17(String y, int x) {
+	field = y;
+    }
+
+    @Local public int g() {
+	field = "Hello";
+	return 1;
+    }
+
+    @Pure public void f() {	
+	if(field != null) {
+	    new FieldDeref_17(field.toString(),g());
+	}
+    }
+
+    @Pure public static void main(String[] args) {
+	new FieldDeref_17(null,1).f();
+    }
+}

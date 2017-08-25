@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# (C) Copyright David James Pearce 2009.  Permission to copy, use,
+# modify, sell and distribute this software is granted provided this
+# copyright notice appears in all copies.  This software is provided
+# "as is" without express or implied warranty, and with no claim as to
+# its suitability for any purpose.
+#
+# Email: david.pearce@mcs.vuw.ac.nz
+
+################
+# CONFIGURATION
+################
+
+DIR=`dirname "$0"`/..
+LIBDIR=$DIR/lib
+
+# check for running under cywin
+cygwin=false
+case "`uname`" in
+  CYGWIN*) cygwin=true ;;
+esac
+
+##################
+# RUN APPLICATION
+##################
+
+if $cygwin; then
+    # under cygwin the classpath separator must be ";"
+    LIBDIR=`cygpath -pw "$LIBDIR"`
+    JPURE_CLASSPATH="$LIBDIR/jpure.jar;$LIBDIR/jkit.jar;$LIBDIR/antlr-runtime.jar;$CLASSPATH"
+    JPURE_BOOT="$LIBDIR/jrt.jar;$CLASSPATH"
+else
+    # under UNIX the classpath separator must be ":"
+    JPURE_CLASSPATH="$LIBDIR/jpure.jar:$LIBDIR/jkit.jar:$LIBDIR/antlr-runtime.jar:$CLASSPATH"
+    JPURE_BOOT="$LIBDIR/jrt.jar:$CLASSPATH"
+fi
+
+java -server -Xmx128M -cp "$JPURE_CLASSPATH" jpure.Main -cp "$JPURE_BOOT" "$@"

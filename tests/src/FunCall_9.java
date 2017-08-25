@@ -1,0 +1,11 @@
+import java.util.*;
+
+public class FunCall_9 {
+    public void f(String x) {
+	g(x);
+    }
+
+    public String g(String y) {
+	return y + "World";
+    }
+}

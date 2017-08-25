@@ -1,0 +1,8 @@
+import jkit.java.annotations.*;
+public class ArrayDeref_2 {
+    public String[] x;
+
+    @Pure public String f() { 
+	return x[0];
+    }
+}

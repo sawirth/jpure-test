@@ -1,0 +1,8 @@
+import jkit.java.annotations.*;
+public class LocalDeref_7 {
+    private int field;
+
+    @Pure public int f(LocalDeref_7 x) {
+	return x.field;
+    }
+}

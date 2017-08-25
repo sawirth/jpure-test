@@ -1,0 +1,13 @@
+import jpure.annotations.*;
+import java.util.*;
+
+public class FunCall_8 {
+    @Pure public void f(String x) {
+	g(x);
+    }
+
+    @Pure public void g(String y) {
+	String[] xs = new String[10];
+	xs[0] = "Hello";	
+    }
+}

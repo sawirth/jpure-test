@@ -1,0 +1,16 @@
+import jpure.annotations.*;
+public class Constructor_1 {
+    @Local public String field;
+    
+    @Pure public Constructor_1() {
+	
+    }
+
+    @Pure public String f() {
+	return field.toString();
+    }
+
+    public static void main(String[] args) {
+	System.out.println(new Constructor_1().f());
+    }
+}

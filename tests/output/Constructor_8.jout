@@ -1,0 +1,14 @@
+import jpure.annotations.*;
+public class Constructor_8 {
+    static String field;
+
+    @Pure public static void create() {
+	if(field != null) {
+	    new Constructor_8();
+	    field.toString();
+	}
+    }
+
+    @Pure public Constructor_8() {
+    }
+}

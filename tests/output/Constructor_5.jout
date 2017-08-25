@@ -1,0 +1,10 @@
+import jpure.annotations.*;
+public class Constructor_5 {
+    @Pure public static void create(String x) {
+	new Constructor_5(x);
+    }
+
+    @Pure public Constructor_5(String y) {
+	y.toString();
+    }
+}

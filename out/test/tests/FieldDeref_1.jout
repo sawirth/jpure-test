@@ -1,0 +1,8 @@
+import jkit.java.annotations.*;
+public class FieldDeref_1 {
+    public String field;
+
+    @Pure public String f() {
+	return field.toString();
+    }
+}

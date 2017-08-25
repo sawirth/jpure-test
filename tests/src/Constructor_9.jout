@@ -1,0 +1,12 @@
+import jpure.annotations.*;
+public class Constructor_9 {
+    private int[] array;
+
+    @Fresh @Pure public Constructor_9() {
+	this.array = new int[10];
+    }
+
+    @Fresh(1) @Pure public Constructor_9(int[] array) {
+	this.array = array;
+    }
+}

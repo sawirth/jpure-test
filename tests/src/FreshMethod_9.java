@@ -1,0 +1,15 @@
+public class FreshMethod_9 {
+    FreshMethod_9 link;
+
+    static FreshMethod_9 terminator = new FreshMethod_9();
+
+    static FreshMethod_9 create() {
+	FreshMethod_9 r = new FreshMethod_9();
+	set(r);
+	return r; // should be fresh 1 level
+    }
+
+    static void set(FreshMethod_9 r) {
+	r.link = terminator;
+    }
+}

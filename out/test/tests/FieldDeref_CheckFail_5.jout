@@ -1,0 +1,15 @@
+import jkit.java.annotations.*;
+import java.util.*;
+
+public class FieldDeref_CheckFail_5 {
+    String[] array = {"Hello","World"};
+    String str;
+
+    @Local public void sum() {
+	str = array[0];
+    }
+    
+    @Pure public void other() {
+	str.toString();
+    }
+}

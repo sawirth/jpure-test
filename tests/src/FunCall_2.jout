@@ -1,0 +1,15 @@
+import jpure.annotations.*;
+public class FunCall_2 {
+    @Pure public String f(String x) {
+	return x;
+    }
+
+    @Pure public void g(String y) {
+	y = f(y);
+	h(y);
+    }
+
+    @Pure public void h(String z) {
+	z.toString();
+    }
+}

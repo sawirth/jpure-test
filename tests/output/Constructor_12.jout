@@ -1,0 +1,17 @@
+import jpure.annotations.*;
+public class Constructor_12 {
+    Constructor_12 link;
+    
+    @Pure public Constructor_12(Constructor_12 link) {
+	this.link = link;
+    }
+
+    @Local public void local() {
+	link = null;
+    }
+
+    public void link(Constructor_12 next) {
+	Constructor_12 x = new Constructor_12(next);
+	x.link.local();
+    }	
+}

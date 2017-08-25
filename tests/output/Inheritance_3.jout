@@ -1,0 +1,17 @@
+import jpure.annotations.*;
+public class Inheritance_3 {
+    public static abstract class Parent {
+	@Pure abstract public void f(String x);
+    }
+
+    public static class Child extends Parent {
+	@Pure public void f(String x) {
+	    x.toString();
+	}
+    }
+
+    @Pure public static void main(String x) {
+	Parent p = new Parent();
+	p.f(x);
+    }
+}

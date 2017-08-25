@@ -1,0 +1,19 @@
+import jpure.annotations.*;
+public class Inheritance_2 {
+    public static class Parent {
+	@Fresh @Pure public String f() {
+	    return null;
+	}
+    }
+
+    public static class Child extends Parent {
+	@Fresh @Pure public String f() {
+	    return null;
+	}
+    }
+
+    @Pure public static void main() {
+	Parent p = new Child();	
+	p.f().toString();
+    }
+}

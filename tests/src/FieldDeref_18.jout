@@ -1,0 +1,19 @@
+import jkit.java.annotations.*;
+public class FieldDeref_18 {
+    String field = "hello";
+
+    @Fresh @Local public String g() {
+	field = "Hello";
+	return "World";
+    }
+
+    @Local public void f() {
+	if(field != null) {
+	    String[] arr = {g(),field.toString()};
+	}
+    }
+
+    @Pure public static void main(String[] args) {
+	new FieldDeref_18().f();
+    }
+}

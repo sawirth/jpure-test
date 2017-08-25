@@ -1,0 +1,9 @@
+import jkit.java.annotations.*;
+public class LocalDeref_15 {
+    String obj;
+    public void f(LocalDeref_15 x) {
+	synchronized(x.obj) {
+	    System.out.println("HELLO");
+	}
+    }
+}

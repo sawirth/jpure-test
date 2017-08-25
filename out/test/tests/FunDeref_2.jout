@@ -1,0 +1,16 @@
+import jkit.java.annotations.*;
+public class FunDeref_2 {
+    public String x;
+
+    @Local FieldDeref_2(String x) {
+	this.x = x;
+    }
+
+    @Pure public String field() {
+	return x;
+    }
+    
+    @Pure public String f() {
+	return field().toString();
+    }
+}

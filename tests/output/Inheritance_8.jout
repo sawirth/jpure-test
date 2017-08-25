@@ -1,0 +1,22 @@
+import jpure.annotations.*;
+public class Inheritance_8 {
+    @Fresh public String f() {
+	return "Hello World";
+    }
+
+    public static class Inner extends Inheritance_8 {
+	@Fresh public String f() {
+	    return null;
+	}	
+    }
+
+    public static class Child extends Inner {
+	@Fresh public String f() {
+	    return "Hello World";
+	}	
+    }
+
+    @Fresh public String g() {
+	return f();
+    }
+}

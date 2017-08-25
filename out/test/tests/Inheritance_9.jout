@@ -1,0 +1,12 @@
+import jpure.annotations.*;
+public class Inheritance_9 {
+    @Fresh @Pure public Inheritance_9(String x) {
+	x.toString();
+    }
+
+    public static class Inner extends Inheritance_9 {
+	@Fresh @Pure Inner(String x) {
+	    super(x);
+	}
+    }
+}

@@ -1,0 +1,20 @@
+import jkit.java.annotations.*;
+public class FunDeref_22 {
+
+    public String field = "Hello World";
+
+    @Pure public String field() {
+	return field;
+    }
+
+    @Local public boolean g() {
+	field = null;
+	return true;
+    }
+
+    @Local public void f(String y) {
+	if(y == null && g() && field() != null) {
+	    field().toString();
+	}
+    }
+}

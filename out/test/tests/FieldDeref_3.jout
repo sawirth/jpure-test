@@ -1,0 +1,12 @@
+import jkit.java.annotations.*;
+public class FieldDeref_3 {
+    public String x;
+
+    @Local FieldDeref_3(String x) {
+	this.x = x;
+    }
+    
+    @Pure public String f() {
+	return x;
+    }
+}

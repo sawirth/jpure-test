@@ -1,0 +1,6 @@
+import jkit.java.annotations.*;
+public class LocalDeref_5 {
+    @Pure public int f(String[] x) {
+	return x.length;
+    }
+}

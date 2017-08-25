@@ -1,0 +1,11 @@
+import jkit.java.annotations.*;
+public class FieldDeref_9 {
+    String field;
+
+    public void f(FieldDeref_9 ptr) {	
+	if(field != null) {
+	    ptr.field = null;
+	    field.toString();
+	}
+    }
+}

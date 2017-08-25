@@ -1,0 +1,8 @@
+import jkit.java.annotations.*;
+public class LocalDeref_6 {
+    private int field;
+
+    public void f(LocalDeref_6 x) {
+	x.field = 1;
+    }
+}

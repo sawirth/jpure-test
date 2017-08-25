@@ -1,0 +1,10 @@
+import jpure.annotations.*;
+public class Constructor_4 {
+    @Fresh @Pure public Constructor_4(String x) {
+	x.toString();
+    }
+
+    @Fresh @Pure public Constructor_4(String x, String y) {
+	this(x);
+    }
+}

@@ -1,0 +1,11 @@
+import jpure.annotations.*;
+public class FreshMethod_1 {
+    @Fresh int[] f() {
+	return new int[10];
+    }
+
+    @Fresh int[] g() {
+	int[] a = {1,2,3};
+	return a;
+    }
+}

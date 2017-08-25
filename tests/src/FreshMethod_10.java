@@ -1,0 +1,13 @@
+public class FreshMethod_10 {
+    public FreshMethod_10() {}
+
+    public FreshMethod_10(String x) {
+	System.out.println(x);
+    }
+
+    static FreshMethod_10 create() {
+	FreshMethod_10 r = new FreshMethod_10();
+	new FreshMethod_10("Hello");
+	return r; 
+    }
+}

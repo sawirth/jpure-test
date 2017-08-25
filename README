@@ -1,0 +1,44 @@
+Known Problems
+==============
+
+* Object.equals() is not pure.  There calling equals on any class
+  doesn't override equals, or on any interface, results in an impure
+  method.
+
+* Iterating collections results in an impure method.  This is because
+  they return "fresh" objects, but this is not currently checked for.
+  (CURRENTLY BECAUSE HAS-NEXT NOT PURE OR LOCAL)
+
+* Assigning to parameters obviously results in an impure method.
+  However, this is frequently done where parameters are used as
+  additional return values.  In particular, passing arrays and then
+  updating them inplace is very common in String.
+
+* Ad-hoc Caching is a major problem.  Examples include caching in
+  ???.equals(), and also HashMap.entrySet().
+
+* Methods like Collections.reverse() always force impure methods,
+  desipte the fact that they are effectively functions.  They
+  essentially should be polymorphic in the "freshness" of the input
+  parameter.
+
+Problematic Methods
+===================
+
+java.lang.Object.equals()
+
+java.lang.Object.clone()
+
+java.util.AbstractCollection.size()
+
+java.util.Iterator.hasNext()
+
+Ideas
+=====
+
+Mark some methods manually.  e.g. Iteraror.hasNext(), Object.equals()
+
+Can definitely deal with modification of array parameters.
+
+Control-flow paths which only lead to exceptions could be pruned.
+This might help in a few cases.

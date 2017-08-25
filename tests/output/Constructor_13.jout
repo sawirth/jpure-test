@@ -1,0 +1,14 @@
+import jpure.annotations.*;
+public class Constructor_13 {
+    public String field;
+
+    public static String escaped = "blah";
+
+    @Pure public Constructor_13() {
+	this(escaped);
+    }
+
+    @Pure public Constructor_13(String x) {
+	field = x;
+    }
+}

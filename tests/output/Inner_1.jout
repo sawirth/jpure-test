@@ -1,0 +1,10 @@
+import jpure.annotations.*;
+public class Inner_1 {
+    @Local private String field;
+
+    public class Inner {
+	public void g(String f) {	       
+	    field = f;
+	}
+    }
+}

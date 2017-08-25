@@ -1,0 +1,15 @@
+import jpure.annotations.*;
+import java.util.*;
+
+public class FunCall_7 {
+    private ArrayList<String> list = new ArrayList<String>();
+
+    @Pure public boolean contains(String s) {
+	for(String l : list) {
+	    if(l.equals(s)) {
+		return true;
+	    }
+	}
+	return false;
+    }
+}

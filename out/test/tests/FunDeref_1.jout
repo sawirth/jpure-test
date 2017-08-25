@@ -1,0 +1,10 @@
+import jkit.java.annotations.*;
+public class FunDeref_1 {
+    @Fresh @Pure public String field()  {
+	return "Hello";
+    }
+
+    @Pure public String f() {
+	return field().toString();
+    }
+}

@@ -1,0 +1,10 @@
+import jpure.annotations.*;
+public class FreshMethod_8 {
+    @Local FreshMethod_8 link;
+
+    @Fresh static FreshMethod_8 create() {
+	FreshMethod_8 r = new FreshMethod_8();
+	r.link = null;
+	return r; 
+    }
+}

@@ -1,0 +1,12 @@
+import jpure.annotations.*;
+public class LocalMethod_3 {
+    int x;
+
+    @Local public void f() {
+	x = 1;
+    }
+
+    @Local public void g() {
+	f();
+    }
+}

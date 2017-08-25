@@ -1,0 +1,26 @@
+import jpure.annotations.*;
+public class Constructor_3 {
+    public Constructor_3() {
+	init();
+    }
+    
+    public void init() {
+	// do nothing
+    }
+
+    public static class Inner extends Constructor_3 {
+	public String field;
+
+	public Inner() {
+	    field = "Hello";
+	}
+
+	public void init() {
+	    System.out.println(field.toString());
+	}
+    }
+
+    public static void main(String[] args) {
+	new Inner();
+    }
+}

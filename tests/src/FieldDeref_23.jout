@@ -1,0 +1,13 @@
+import jkit.java.annotations.*;
+public class FieldDeref_23 {
+    FieldDeref_23 link;
+    int data;
+
+    public void sum(int[] output, int i) {
+	if(link != null) {
+	    link.sum(output,i+1);
+	    link.sum(output,i+1);
+	    output[i] = data;
+	}
+    }
+}

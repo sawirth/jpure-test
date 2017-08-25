@@ -1,0 +1,16 @@
+import jkit.java.annotations.*;
+public class Test {
+    String field;
+
+    @Fresh @Pure public String h() {
+	return null;
+    }
+
+    @Local public void f() {
+	field = h();
+    }
+
+    @Pure public void sum(String x) {
+	field.toString();
+    }
+}

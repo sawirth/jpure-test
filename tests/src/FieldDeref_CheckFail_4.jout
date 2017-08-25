@@ -1,0 +1,10 @@
+import jkit.java.annotations.*;
+import java.util.*;
+public class FieldDeref_CheckFail_4 {
+    public static ArrayList tmp = null;
+    @Pure public int sum() {
+	synchronized(tmp) {
+	    return 1;
+	}
+    }
+}

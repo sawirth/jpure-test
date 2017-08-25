@@ -1,0 +1,14 @@
+import jkit.java.annotations.*;
+public class FieldDeref_24 {
+    private String str = "Hello World";
+
+    public class Inner {
+	public void f() {
+	    System.out.println(str.toString());
+	}
+    }
+    public static void main(String[] args) {
+	FieldDeref_24 t = new FieldDeref_24();
+	t.new Inner().f();
+    }
+}

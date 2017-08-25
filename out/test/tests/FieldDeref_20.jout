@@ -1,0 +1,15 @@
+import jkit.java.annotations.*;
+public class FieldDeref_20 {
+
+    public String field = "Hello World";
+
+    @Pure public boolean g() {
+	return true;
+    }
+
+    @Pure public void f(String y) {
+	if(y == null && field != null && g()) {
+	    field.toString();
+	}
+    }
+}

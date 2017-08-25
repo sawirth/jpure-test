@@ -1,0 +1,27 @@
+import jkit.java.annotations.*;
+public class FunDeref_16 {
+    String field = "hello";
+
+    @Local public FunDeref_16(int x, String y) {
+	field = y;
+    }
+
+    @Local public int g() {
+	field = "Hello";
+	return 1;
+    }
+
+    @Pure public String field() {
+	return field;
+    }
+
+    @Pure public void f() {	
+	if(field() != null) {
+	    new FunDeref_16(g(),field().toString());
+	}
+    }
+
+    @Pure public static void main(String[] args) {
+	new FunDeref_16(1,null).f();
+    }
+}

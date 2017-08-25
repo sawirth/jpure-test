@@ -1,0 +1,24 @@
+import jkit.java.annotations.*;
+public class Generics_2<K,@Nullable T> {
+    private K key;
+    private T item;
+   
+    public Generics_2(K k, T i) {
+	key = k;
+	item = i;
+    }
+
+    public T get(K k) {
+	if(k.equals(key)) {
+	    return item;
+	} else {
+	    return null;
+	}	    
+    }    
+
+    public static void main(String[] args) {
+	Generics_2<Integer,String> g1 = new Generics_2<Integer,String>(1,null);
+	Generics_2<String,String> g2 = new Generics_2<String,String>("key","Hello World");
+	System.out.println(g2.get("key").toString());
+    }
+}

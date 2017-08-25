@@ -1,0 +1,14 @@
+import jpure.annotations.*;
+public class Throw_1 {
+    @Pure public void g() {
+	
+    }
+
+    @Pure public void f() {
+	try {
+	    g();
+	} catch(NullPointerException e) {
+	    throw e;
+	}
+    }
+}

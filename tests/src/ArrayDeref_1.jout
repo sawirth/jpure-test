@@ -1,0 +1,6 @@
+import jkit.java.annotations.*;
+public class ArrayDeref_1 {
+    public void f(String[] xs) {
+	xs[0] = "Hello World";
+    }
+}

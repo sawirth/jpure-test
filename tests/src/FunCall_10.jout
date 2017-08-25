@@ -1,0 +1,15 @@
+import jpure.annotations.*;
+import java.util.*;
+
+public class FunCall_10 {
+    public String str;
+
+    @Pure public void f(String x) {
+	g(x);
+    }
+
+    @Pure public void g(String y) {
+	FunCall_10 x = new FunCall_10();
+	x.str = "Hello World";
+    }
+}

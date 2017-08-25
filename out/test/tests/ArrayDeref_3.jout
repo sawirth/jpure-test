@@ -1,0 +1,8 @@
+import jkit.java.annotations.*;
+public class ArrayDeref_3 {
+    public String[] x;
+
+    public void f(String y) { 
+	x[0] = y;
+    }
+}

@@ -1,0 +1,18 @@
+import jkit.java.annotations.*;
+import java.util.*;
+
+public class FunDeref_5 {
+    ArrayList<String> ls;
+
+    @Local FunDeref_5(ArrayList<String> ls) {
+	this.ls = ls;
+    }
+
+    @Pure public List<String> field() {
+	return ls;
+    }
+
+    @Pure public boolean f() {
+	return field().size() > 0;
+    }
+}

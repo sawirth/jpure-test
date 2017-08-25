@@ -1,0 +1,12 @@
+import jpure.annotations.*;
+public class LocalMethod_4 {
+    int x;
+
+    @Fresh @Pure public LocalMethod_4(int x) {
+	this.x = x;
+    }
+
+    @Pure public void f() {
+	new LocalMethod_4(1);
+    }
+}

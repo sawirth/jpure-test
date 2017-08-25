@@ -1,0 +1,6 @@
+import jkit.java.annotations.*;
+public class LocalDeref_13a {
+    @Pure public boolean f(Object x) {
+	return x instanceof String && ((String)x).length() > 1;
+    }
+}
